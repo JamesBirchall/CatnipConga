@@ -184,7 +184,8 @@ public class World {
 					//record tick time and set new one temporarily here
 					savedTickTime = tick;
 					tick = 0.5f; //slow time!
-					Assets.meow.play(1);
+					if(Settings.soundEnabled)
+						Assets.meow.play(1);
 				}
 			}
 			

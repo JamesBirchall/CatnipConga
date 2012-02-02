@@ -34,6 +34,8 @@ public class LoadingScreen extends Screen {
 			Assets.mainMenuHighScores = g.newPixmap("HighscoresButton_449x54.png", PixmapFormat.ARGB4444);
 			Assets.mainMenuHelp = g.newPixmap("HelpButton_169x55.png", PixmapFormat.ARGB4444);
 			Assets.credits = g.newPixmap("CreditsButton_163x30.png", PixmapFormat.ARGB4444);
+			Assets.controls = g.newPixmap("ControlsButton209x30.png", PixmapFormat.ARGB4444);
+			Assets.controlCopy = g.newPixmap("ControlText400x86.png", PixmapFormat.ARGB4444);
 			
 			//Setup number map but don't allow scaling due to screen resolutions & grabbing numbers
 			//Assets.numberMap = g.newPixmap("HastyPuddings_NumberMap_210x32.png", PixmapFormat.ARGB4444);
@@ -117,6 +119,12 @@ public class LoadingScreen extends Screen {
 			Assets.nextIcon = g.newPixmap("iconNext_64x64.png", PixmapFormat.ARGB4444);
 			
 			Assets.creditsScreen = g.newPixmap("CreditsScreen800x480.png", PixmapFormat.ARGB4444);
+			
+			Assets.buttonDown = g.newPixmap("ButtonDown75x75.png",	PixmapFormat.ARGB4444);
+			Assets.buttonUp = g.newPixmap("ButtonUp75x75.png",	PixmapFormat.ARGB4444);
+			Assets.buttonLeft = g.newPixmap("ButtonLeft75x75.png",	PixmapFormat.ARGB4444);
+			Assets.buttonRight = g.newPixmap("ButtonRight75x75.png",	PixmapFormat.ARGB4444);
+			
 		}else{
 			//load default small assets for game	
 			Assets.background = g.newPixmap("BackgroundGrass_480_320.png", PixmapFormat.RGB565);
@@ -128,6 +136,8 @@ public class LoadingScreen extends Screen {
 			Assets.mainMenuHighScores = g.newPixmap("HighscoresButton_261x31.png", PixmapFormat.ARGB4444);
 			Assets.mainMenuHelp = g.newPixmap("HelpButton_98x31.png", PixmapFormat.ARGB4444);
 			Assets.credits = g.newPixmap("CreditsButton_96x17.png", PixmapFormat.ARGB4444);
+			Assets.controls = g.newPixmap("ControlsButton119x17.png", PixmapFormat.ARGB4444);
+			Assets.controlCopy = g.newPixmap("ControlText302x65.png", PixmapFormat.ARGB4444);
 
 			//Setup number map but don't allow scaling due to screen resolutions & grabbing numbers
 			//Assets.numberMap = g.newPixmap("HastyPuddings_NumberMap_210x32.png", PixmapFormat.ARGB4444);
@@ -210,6 +220,11 @@ public class LoadingScreen extends Screen {
 			
 			Assets.nextIcon = g.newPixmap("iconNext_32x32.png", PixmapFormat.ARGB4444);
 			Assets.creditsScreen = g.newPixmap("CreditsScreen480x320.png", PixmapFormat.ARGB4444);
+
+			Assets.buttonDown = g.newPixmap("ButtonDown50x50.png",	PixmapFormat.ARGB4444);
+			Assets.buttonUp = g.newPixmap("ButtonUp50x50.png",	PixmapFormat.ARGB4444);
+			Assets.buttonLeft = g.newPixmap("ButtonLeft50x50.png",	PixmapFormat.ARGB4444);
+			Assets.buttonRight = g.newPixmap("ButtonRight50x50.png",	PixmapFormat.ARGB4444);
 		}
 		
 		Assets.click = game.getAudio().newSound("Click.ogg");
@@ -231,7 +246,13 @@ public class LoadingScreen extends Screen {
 		Settings.load(game.getFileIO());
 		
 		//add some time delay here or go to splash screen before directly showing main menu screen
-		game.setScreen(new MainMenuScreen(game));
+		if(Settings.controls == 0){
+			//show controls chooser
+			game.setScreen(new ChooseControlsScreen(game));
+		} else{
+			game.setScreen(new MainMenuScreen(game));	
+		}
+		
 	}
 
 	@Override

@@ -13,12 +13,14 @@ public class Assets {
 	public static Pixmap mainMenuHighScores;
 	public static Pixmap mainMenuHelp;
 	public static Pixmap credits;
+	public static Pixmap controls;
 	
 	public static Pixmap help1text;
 	public static Pixmap help2text;
 	public static Pixmap help3text;
 	public static Pixmap help4text;
 	public static Pixmap help5text;
+	public static Pixmap controlCopy;
 	public static Pixmap gestureLeftTouch;
 	public static Pixmap gestureRightTouch;
 	public static Pixmap creditsScreen;
@@ -85,6 +87,12 @@ public class Assets {
 	public static Pixmap score;
 	public static Pixmap ready;
 	public static Pixmap nextIcon;
+	
+	public static Pixmap buttonLeft;
+	public static Pixmap buttonRight;
+	public static Pixmap buttonDown;
+	public static Pixmap buttonUp;
+	
 	
 	public static Sound click;
 	public static Sound purr;

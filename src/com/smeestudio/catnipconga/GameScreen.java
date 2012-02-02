@@ -133,6 +133,12 @@ public class GameScreen extends Screen {
         	started = true;
         }
 		
+		Graphics g = game.getGraphics();
+		
+		//Get cat current direction
+		CongaCat headCat= world.cat.herd.get(0);
+		
+		
 		int len = touchEvents.size();
 		for(int i = 0; i < len; i++){
 			TouchEvent event = touchEvents.get(i);
@@ -149,13 +155,56 @@ public class GameScreen extends Screen {
 			//if touch down move head left or right ;)
 			//eventuall replace with accelerometer readings compared to last known time
 			if(event.type == TouchEvent.TOUCH_DOWN && started){
-				if(event.x < width && event.y > 64) {
-					world.cat.turnLeft();
+				//if cat head direction lef/right then we can only press up/down
+				if((headCat.direction == CongaCat.LEFT) || (headCat.direction == CongaCat.RIGHT)){
+					//detect either press on up down buttons only
+					//detect up button first, so great than button.x, less than button .x + width of button, and same for height
+					if((inBounds(event, (g.getWidth())-((g.getWidth()/10)*2)-Assets.buttonDown.getWidth(), g.getHeight()-((g.getHeight()/7)+(2*Assets.buttonUp.getHeight()))-Assets.buttonDown.getHeight(), Assets.buttonUp.getWidth(),Assets.buttonUp.getHeight())) ||
+							inBounds(event, ((g.getWidth()/10)*2), g.getHeight()-((g.getHeight()/7)+(2*Assets.buttonUp.getHeight()))-Assets.buttonUp.getHeight(), Assets.buttonUp.getWidth(),Assets.buttonUp.getHeight())){
+						//detect direction again and set either right or left appropriatly
+						if(headCat.direction == CongaCat.LEFT){
+							world.cat.turnRight();	//turning the cat antiCLockwise so down!
+						}
+						if(headCat.direction == CongaCat.RIGHT){
+							world.cat.turnLeft();	//turning the cat clockwise so down!
+						}
+					}
+					if((inBounds(event, (g.getWidth())-((g.getWidth()/10)*2)-Assets.buttonDown.getWidth(), (g.getHeight()-(g.getHeight()/7))-Assets.buttonDown.getHeight(), Assets.buttonDown.getWidth(),Assets.buttonDown.getHeight())) ||
+							inBounds(event,((g.getWidth()/10)*2), (g.getHeight()-(g.getHeight()/7))-Assets.buttonDown.getHeight(), Assets.buttonDown.getWidth(),Assets.buttonDown.getHeight())){
+						//detect direction again and set either right or left appropriatly
+						if(headCat.direction == CongaCat.LEFT){
+							world.cat.turnLeft();
+						}
+						if(headCat.direction == CongaCat.RIGHT){
+							world.cat.turnRight();	
+						}
+					}
+					
 				}
-				if(event.x > width && event.y > 64) {
-					world.cat.turnRight();
-				}	
 				
+				//if cat head direction up/down then we can only press left/right
+				if((headCat.direction == CongaCat.UP) || (headCat.direction == CongaCat.DOWN)){
+					if((inBounds(event,(g.getWidth())-((g.getWidth()/10)*2)-(2*Assets.buttonLeft.getWidth()), g.getHeight()-((g.getHeight()/7)+Assets.buttonLeft.getHeight())-Assets.buttonLeft.getHeight() , Assets.buttonLeft.getWidth(),Assets.buttonLeft.getHeight())) ||
+							inBounds(event,((g.getWidth()/10)*2)-Assets.buttonLeft.getWidth(), g.getHeight()-((g.getHeight()/7)+Assets.buttonLeft.getHeight())-Assets.buttonLeft.getHeight(), Assets.buttonLeft.getWidth(),Assets.buttonLeft.getHeight())){
+						//detect direction again and set either up or down
+						if(headCat.direction == CongaCat.UP){
+							world.cat.turnLeft();	//turning the cat antiCLockwise so down!
+						}
+						if(headCat.direction == CongaCat.DOWN){
+							world.cat.turnRight();	//turning the cat clockwise so down!
+						}
+					}
+					if((inBounds(event,(g.getWidth())-((g.getWidth()/10)*2), g.getHeight()-((g.getHeight()/7)+Assets.buttonRight.getHeight())-Assets.buttonRight.getHeight(), Assets.buttonRight.getWidth(),Assets.buttonRight.getHeight())) ||
+							inBounds(event,((g.getWidth()/10)*2)+Assets.buttonRight.getWidth(), g.getHeight()-((g.getHeight()/7)+Assets.buttonRight.getHeight())-Assets.buttonRight.getHeight(), Assets.buttonRight.getWidth(),Assets.buttonRight.getHeight())){
+						//detect direction again and set either up or down
+						if(headCat.direction == CongaCat.UP){
+							world.cat.turnRight();
+						}
+						if(headCat.direction == CongaCat.DOWN){
+							world.cat.turnLeft();	
+						}
+					}					
+				}				
 			}
 		}
 		
@@ -179,6 +228,14 @@ public class GameScreen extends Screen {
 		}
 	}
 
+	//method for checking whether object with starting x, y and width/height has been touched!
+	private boolean inBounds(TouchEvent event, int x, int y, int width, int height) {
+		if(event.x > x && event.x < x + width - 1 && event.y > y && event.y < y + height - 1)
+			return true;
+		else
+			return false;
+	}
+	
 	private void updateReady(List<TouchEvent> touchEvents) {
 		if(touchEvents.size() > 0){
 			state = GameState.Running;
@@ -640,6 +697,22 @@ public class GameScreen extends Screen {
 		}else{
 			g.drawPixmap(Assets.pauseButton, 10, 10);	
 		}		
+		
+		//Draw buttons depending on which side has been saved in settings
+		if(Settings.controls == 2){
+			g.drawPixmap(Assets.buttonDown, (g.getWidth())-((g.getWidth()/10)*2)-Assets.buttonDown.getWidth(), (g.getHeight()-(g.getHeight()/7))-Assets.buttonDown.getHeight());
+			g.drawPixmap(Assets.buttonRight, (g.getWidth())-((g.getWidth()/10)*2), g.getHeight()-((g.getHeight()/7)+Assets.buttonRight.getHeight())-Assets.buttonRight.getHeight());
+			g.drawPixmap(Assets.buttonLeft, (g.getWidth())-((g.getWidth()/10)*2)-(2*Assets.buttonLeft.getWidth()), g.getHeight()-((g.getHeight()/7)+Assets.buttonLeft.getHeight())-Assets.buttonLeft.getHeight());
+			g.drawPixmap(Assets.buttonUp, (g.getWidth())-((g.getWidth()/10)*2)-Assets.buttonDown.getWidth(), g.getHeight()-((g.getHeight()/7)+(2*Assets.buttonUp.getHeight()))-Assets.buttonDown.getHeight());
+			
+		} else {
+			//Left hand side buttons
+			g.drawPixmap(Assets.buttonDown, ((g.getWidth()/10)*2), (g.getHeight()-(g.getHeight()/7))-Assets.buttonDown.getHeight());
+			g.drawPixmap(Assets.buttonRight, ((g.getWidth()/10)*2)+Assets.buttonRight.getWidth(), g.getHeight()-((g.getHeight()/7)+Assets.buttonRight.getHeight())-Assets.buttonRight.getHeight());
+			g.drawPixmap(Assets.buttonLeft,((g.getWidth()/10)*2)-Assets.buttonLeft.getWidth(), g.getHeight()-((g.getHeight()/7)+Assets.buttonLeft.getHeight())-Assets.buttonLeft.getHeight());
+			g.drawPixmap(Assets.buttonUp, ((g.getWidth()/10)*2), g.getHeight()-((g.getHeight()/7)+(2*Assets.buttonUp.getHeight()))-Assets.buttonUp.getHeight());	
+		}
+		
 	}
 
 	private void drawPausedUI() {

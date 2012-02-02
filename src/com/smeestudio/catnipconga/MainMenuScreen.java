@@ -95,6 +95,10 @@ public class MainMenuScreen extends Screen {
 						return;
 				}
 				
+				//Check press on controls
+				if(inBounds(event, (g.getWidth()-Assets.controls.getWidth()), ((g.getHeight()/10)*7), Assets.controls.getWidth(), Assets.controls.getHeight())){
+					game.setScreen(new ChooseControlsScreen(game));
+				}
 			}
 		}
 		
@@ -237,6 +241,8 @@ public class MainMenuScreen extends Screen {
 		g.drawPixmap(Assets.logo2, (g.getWidth()-Assets.logo2.getWidth()), ((g.getHeight()/10)*9));
 		//Add Credits button here... 2 sizes for assets & location placement above logo2
 		g.drawPixmap(Assets.credits, (g.getWidth()-Assets.credits.getWidth()), ((g.getHeight()/10)*8));
+		
+		g.drawPixmap(Assets.controls, (g.getWidth()-Assets.controls.getWidth()), ((g.getHeight()/10)*7));
 		
 		//draw main menu items
 		g.drawPixmap(Assets.mainMenuPlay, ((g.getWidth()/2-(Assets.mainMenuPlay.getWidth()/2))), (g.getHeight()/10)+Assets.logo.getHeight());
