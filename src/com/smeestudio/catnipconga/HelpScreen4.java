@@ -49,7 +49,7 @@ public class HelpScreen4 extends Screen {
 		
 		g.drawPixmap(Assets.iplant1, (g.getWidth()/2)-(Assets.iplant1.getWidth()/2), (g.getHeight()/2)+Assets.iplant1.getHeight());		
 		
-		g.drawPixmap(Assets.nextIcon, g.getWidth()-Assets.nextIcon.getWidth()-10, 10);
+		g.drawPixmap(Assets.buttonRight, g.getWidth()-Assets.buttonRight.getWidth()-10, 10);
 	}
 
 	@Override

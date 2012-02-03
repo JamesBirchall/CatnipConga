@@ -69,7 +69,7 @@ public class HelpScreen2 extends Screen {
 		//draw cat moving left and right across the screen in a loop
 		g.drawPixmap(Assets.catRight, cat.x, cat.y);
 		
-		g.drawPixmap(Assets.nextIcon, g.getWidth()-Assets.nextIcon.getWidth()-10, 10);
+		g.drawPixmap(Assets.buttonRight, g.getWidth()-Assets.buttonRight.getWidth()-10, 10);
 	}
 
 	@Override

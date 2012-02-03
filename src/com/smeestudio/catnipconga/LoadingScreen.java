@@ -116,14 +116,13 @@ public class LoadingScreen extends Screen {
 			Assets.gestureLeftTouch = g.newPixmap("Gesture_LeftHand160x188.png", PixmapFormat.ARGB4444);
 			Assets.gestureRightTouch = g.newPixmap("Gesture_RightHand160x188.png", PixmapFormat.ARGB4444);
 			
-			Assets.nextIcon = g.newPixmap("iconNext_64x64.png", PixmapFormat.ARGB4444);
 			
 			Assets.creditsScreen = g.newPixmap("CreditsScreen800x480.png", PixmapFormat.ARGB4444);
 			
-			Assets.buttonDown = g.newPixmap("ButtonDown75x75.png",	PixmapFormat.ARGB4444);
-			Assets.buttonUp = g.newPixmap("ButtonUp75x75.png",	PixmapFormat.ARGB4444);
-			Assets.buttonLeft = g.newPixmap("ButtonLeft75x75.png",	PixmapFormat.ARGB4444);
-			Assets.buttonRight = g.newPixmap("ButtonRight75x75.png",	PixmapFormat.ARGB4444);
+			Assets.buttonDown = g.newPixmap("ButtonDown80x80.png",	PixmapFormat.ARGB4444);
+			Assets.buttonUp = g.newPixmap("ButtonUp80x80.png",	PixmapFormat.ARGB4444);
+			Assets.buttonLeft = g.newPixmap("ButtonLeft80x80.png",	PixmapFormat.ARGB4444);
+			Assets.buttonRight = g.newPixmap("ButtonRight80x80.png",	PixmapFormat.ARGB4444);
 			
 		}else{
 			//load default small assets for game	
@@ -218,7 +217,6 @@ public class LoadingScreen extends Screen {
 			Assets.gestureLeftTouch = g.newPixmap("Gesture_LeftHand80x94.png", PixmapFormat.ARGB4444);
 			Assets.gestureRightTouch = g.newPixmap("Gesture_RightHand80x94.png", PixmapFormat.ARGB4444);
 			
-			Assets.nextIcon = g.newPixmap("iconNext_32x32.png", PixmapFormat.ARGB4444);
 			Assets.creditsScreen = g.newPixmap("CreditsScreen480x320.png", PixmapFormat.ARGB4444);
 
 			Assets.buttonDown = g.newPixmap("ButtonDown50x50.png",	PixmapFormat.ARGB4444);

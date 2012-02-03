@@ -86,7 +86,6 @@ public class Assets {
 	public static Pixmap quit;
 	public static Pixmap score;
 	public static Pixmap ready;
-	public static Pixmap nextIcon;
 	
 	public static Pixmap buttonLeft;
 	public static Pixmap buttonRight;

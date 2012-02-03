@@ -45,7 +45,7 @@ public class MainMenuScreen extends Screen {
 			//this means nothing is accidently pressed!
 			if(event.type == TouchEvent.TOUCH_UP){
 				//check for volume location presses and set on/off accordingly
-				if(inBounds(event, 5, (g.getHeight() - (Assets.soundOnButton.getHeight())), Assets.soundOnButton.getWidth(), Assets.soundOnButton.getHeight())){
+				if(inBounds(event, 10, (g.getHeight() - (Assets.soundOnButton.getHeight())), Assets.soundOnButton.getWidth(), Assets.soundOnButton.getHeight())){
 					Settings.soundEnabled = !Settings.soundEnabled;
 					if(Assets.bgMusic.isPlaying()){
 						Assets.bgMusic.stop();
@@ -249,15 +249,11 @@ public class MainMenuScreen extends Screen {
 		g.drawPixmap(Assets.mainMenuHighScores, ((g.getWidth()/2-(Assets.mainMenuHighScores.getWidth()/2))), (g.getHeight()/10)+Assets.logo.getHeight()+Assets.mainMenuPlay.getHeight());
 		g.drawPixmap(Assets.mainMenuHelp, ((g.getWidth()/2-(Assets.mainMenuHelp.getWidth()/2))), (g.getHeight()/10)+Assets.logo.getHeight()+Assets.mainMenuPlay.getHeight()+Assets.mainMenuHighScores.getHeight());
 		
-		//Test touch surface area:
-		//g.drawRectNoFill(((g.getWidth()/2-(Assets.mainMenuPlay.getWidth()/2))), (g.getHeight()/10)+Assets.logo.getHeight(), Assets.mainMenuPlay.getWidth(), Assets.mainMenuPlay.getHeight(), Color.BLUE);
-		//g.drawRectNoFill((((g.getWidth()/2)-(Assets.mainMenuHighScores.getWidth()/2))), (g.getHeight()/10)+Assets.logo.getHeight()+Assets.mainMenuPlay.getHeight(), Assets.mainMenuHighScores.getWidth(), Assets.mainMenuHighScores.getHeight(), Color.BLUE);
-		//g.drawRectNoFill((((g.getWidth()/2)-(Assets.mainMenuHelp.getWidth()/2))), (g.getHeight()/10)+Assets.logo.getHeight()+Assets.mainMenuPlay.getHeight()+Assets.mainMenuHighScores.getHeight(), Assets.mainMenuHelp.getWidth(), Assets.mainMenuHelp.getHeight(), Color.BLUE);
 		
 		if(Settings.soundEnabled){
-			g.drawPixmap(Assets.soundOnButton, 5, (g.getHeight() - (Assets.soundOnButton.getHeight())));
+			g.drawPixmap(Assets.soundOnButton, 10, (g.getHeight() - (Assets.soundOnButton.getHeight())));
 		}else{
-			g.drawPixmap(Assets.soundOffButton, 5, (g.getHeight() - (Assets.soundOnButton.getHeight())));
+			g.drawPixmap(Assets.soundOffButton, 10, (g.getHeight() - (Assets.soundOnButton.getHeight())));
 		}
 			
 		

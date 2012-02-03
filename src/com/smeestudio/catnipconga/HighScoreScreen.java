@@ -209,17 +209,7 @@ public class HighScoreScreen extends Screen {
 		}
 
 		
-		//y = 95;
-		//for(int i = 5; i < 9; i++){
-		//	drawText(g, lines[i], 225, y);
-		//	y += 60; //advance 50 px down to next string doesn't overlap
-		//}
-		
-		//then draw 10 but move x back as it's slightly larger
-		//for(int i = 9; i < 10; i++){
-		//	drawText(g, lines[i], 300, y);
-		//	y += 60; //advance 50 px down to next string doesn't overlap
-		//}
+		g.drawPixmap(Assets.buttonLeft, 10, g.getHeight()-Assets.buttonLeft.getHeight()-10);
 	}
 
 	//Method used to render numbers from numberMap from string passed through & location to draw
