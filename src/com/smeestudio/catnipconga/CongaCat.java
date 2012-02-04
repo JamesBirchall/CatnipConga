@@ -23,4 +23,15 @@ public class CongaCat {
 		this.type = type;
 		this.direction = direction;
 	}
+	public void turnLeft(){
+		direction +=1;
+		if(direction > RIGHT)
+			direction = UP;
+	}
+	
+	public void turnRight(){
+		direction -= 1;
+		if(direction < UP)
+			direction = RIGHT;
+	}
 }

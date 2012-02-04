@@ -37,6 +37,7 @@ public class HighScoreScreen extends Screen {
 	public void update(float deltaTime) {
 		//Get list of touch events
 		List<TouchEvent> touchEvents = game.getInput().getTouchEvents();
+		
 		//Get any key events
 		game.getInput().getKeyEvents();
 				
