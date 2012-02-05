@@ -268,9 +268,12 @@ public class MainMenuScreen extends Screen {
 	@Override
 	public void resume() {
 		if(Settings.soundEnabled){
-			Assets.bgMusic.play();
-			Assets.bgMusic.setLooping(true);
-			Assets.bgMusic.restart();
+			if(!Assets.bgMusic.isPlaying()){
+				Assets.bgMusic.play();
+				Assets.bgMusic.setLooping(true);
+				Assets.bgMusic.restart();			
+			}
+
 		}
 	}
 

@@ -91,7 +91,7 @@ public class HelpScreen extends Screen {
 			g.drawPixmap(Assets.plant6, x[9], y[9]);
 		}
 		
-		g.drawPixmap(Assets.help1text, ((g.getWidth()/2)-(Assets.help1text.getWidth()/2)), (g.getHeight()/7));
+		g.drawPixmap(Assets.help1text, ((g.getWidth()/2)-(Assets.help1text.getWidth()/2)), (g.getHeight()/14));
 		
 		g.drawPixmap(Assets.buttonRight, g.getWidth()-Assets.buttonRight.getWidth()-10, 10);
 	}

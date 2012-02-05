@@ -45,7 +45,7 @@ public class HelpScreen5 extends Screen {
 		g.drawPixmap(Assets.background, 0, 0);
 		
 			
-		g.drawPixmap(Assets.help5text, ((g.getWidth()/2)-(Assets.help4text.getWidth()/2)), (g.getHeight()/7));
+		g.drawPixmap(Assets.help5text, ((g.getWidth()/2)-(Assets.help4text.getWidth()/2)), (g.getHeight()/14));
 		
 		//draw cat line
 		//5 cats

@@ -165,8 +165,7 @@ public class HelpScreen3 extends Screen {
 		Graphics g = game.getGraphics();
 		
 		g.drawPixmap(Assets.background, 0, 0);
-		
-		g.drawPixmap(Assets.help3text, ((g.getWidth()/2)-(Assets.help3text.getWidth()/2)), (g.getHeight()/7));
+
 
 		//draw cat stuff here
 		//draw cat by determining type
@@ -247,6 +246,9 @@ public class HelpScreen3 extends Screen {
 		g.drawPixmap(currentCatPixmap, xcat, ycat);			
 		
 		g.drawPixmap(Assets.buttonRight, g.getWidth()-Assets.buttonRight.getWidth()-10, 10);
+		
+		
+		g.drawPixmap(Assets.help3text, ((g.getWidth()/2)-(Assets.help3text.getWidth()/2)), (g.getHeight()/14));
 		
 		//Draw buttons depending on which side has been saved in settings
 		if(Settings.controls == 2){

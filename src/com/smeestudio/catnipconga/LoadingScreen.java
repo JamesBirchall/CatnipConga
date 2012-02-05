@@ -29,12 +29,13 @@ public class LoadingScreen extends Screen {
 			Assets.iBackground = g.newPixmap("IBackgroundGrass_800x480.png", PixmapFormat.RGB565);
 			
 			Assets.logo = g.newPixmap("CatnipCongaLogo_570x106.png", PixmapFormat.ARGB4444);
-			Assets.logo2 = g.newPixmap("BySmeeStudiosLogo_300x49.png", PixmapFormat.ARGB4444);
+			Assets.logo2 = g.newPixmap("BySmeeStudiosLogo_265x43.png", PixmapFormat.ARGB4444);
 			Assets.mainMenuPlay = g.newPixmap("PlayButton_173x57.png", PixmapFormat.ARGB4444);
 			Assets.mainMenuHighScores = g.newPixmap("HighscoresButton_449x54.png", PixmapFormat.ARGB4444);
 			Assets.mainMenuHelp = g.newPixmap("HelpButton_169x55.png", PixmapFormat.ARGB4444);
-			Assets.credits = g.newPixmap("CreditsButton_163x30.png", PixmapFormat.ARGB4444);
-			Assets.controls = g.newPixmap("ControlsButton209x30.png", PixmapFormat.ARGB4444);
+			Assets.credits = g.newPixmap("CreditsButton137x25.png", PixmapFormat.ARGB4444);
+			Assets.controls = g.newPixmap("ControlsButton171x25.png", PixmapFormat.ARGB4444);
+			
 			Assets.controlCopy = g.newPixmap("ControlText400x86.png", PixmapFormat.ARGB4444);
 			
 			//Setup number map but don't allow scaling due to screen resolutions & grabbing numbers
@@ -108,11 +109,12 @@ public class LoadingScreen extends Screen {
 			Assets.score = g.newPixmap("ScoreLogo136x31.png", PixmapFormat.ARGB4444);
 			Assets.ready = g.newPixmap("TouchToStartButton_251x24.png", PixmapFormat.ARGB4444);
 			
-			Assets.help1text = g.newPixmap("HelpScreen1text400x137.png", PixmapFormat.ARGB4444);
-			Assets.help2text = g.newPixmap("HelpScreen2text400x158.png", PixmapFormat.ARGB4444);
-			Assets.help3text = g.newPixmap("HelpScreen3text_400x158.png", PixmapFormat.ARGB4444);
-			Assets.help5text = g.newPixmap("HelpScreen4text400x110.png", PixmapFormat.ARGB4444);
-			Assets.help4text = g.newPixmap("HelpScreen5Text_400x134.png", PixmapFormat.ARGB4444);
+			Assets.help1text = g.newPixmap("HelpScreen1text_400x147.png", PixmapFormat.ARGB4444);
+			Assets.help2text = g.newPixmap("HelpScreen2text_400x147.png", PixmapFormat.ARGB4444);
+			Assets.help3text = g.newPixmap("HelpScreen3text_400x147.png", PixmapFormat.ARGB4444);
+			Assets.help4text = g.newPixmap("HelpScreen4text_400x147.png", PixmapFormat.ARGB4444);
+			Assets.help5text = g.newPixmap("HelpScreen5text_400x147.png", PixmapFormat.ARGB4444);
+			
 			Assets.gestureLeftTouch = g.newPixmap("Gesture_LeftHand160x188.png", PixmapFormat.ARGB4444);
 			Assets.gestureRightTouch = g.newPixmap("Gesture_RightHand160x188.png", PixmapFormat.ARGB4444);
 			
@@ -130,12 +132,12 @@ public class LoadingScreen extends Screen {
 			Assets.iBackground = g.newPixmap("IBackgroundGrass_480_320.png", PixmapFormat.RGB565);
 			
 			Assets.logo = g.newPixmap("CatnipCongaLogo_338x62.png", PixmapFormat.ARGB4444);
-			Assets.logo2 = g.newPixmap("BySmeeStudiosLogo_200x33.png", PixmapFormat.ARGB4444);
+			Assets.logo2 = g.newPixmap("BySmeeStudiosLogo_188x31.png", PixmapFormat.ARGB4444);
 			Assets.mainMenuPlay = g.newPixmap("PlayButton_101x33.png", PixmapFormat.ARGB4444);
 			Assets.mainMenuHighScores = g.newPixmap("HighscoresButton_261x31.png", PixmapFormat.ARGB4444);
 			Assets.mainMenuHelp = g.newPixmap("HelpButton_98x31.png", PixmapFormat.ARGB4444);
-			Assets.credits = g.newPixmap("CreditsButton_96x17.png", PixmapFormat.ARGB4444);
-			Assets.controls = g.newPixmap("ControlsButton119x17.png", PixmapFormat.ARGB4444);
+			Assets.credits = g.newPixmap("CreditsButton99x18.png", PixmapFormat.ARGB4444);
+			Assets.controls = g.newPixmap("ControlsButton123x18.png", PixmapFormat.ARGB4444);
 			Assets.controlCopy = g.newPixmap("ControlText302x65.png", PixmapFormat.ARGB4444);
 
 			//Setup number map but don't allow scaling due to screen resolutions & grabbing numbers
@@ -209,11 +211,12 @@ public class LoadingScreen extends Screen {
 			Assets.score = g.newPixmap("ScoreLogo_92x21.png", PixmapFormat.ARGB4444);
 			Assets.ready = g.newPixmap("TouchToStartButton_251x24.png", PixmapFormat.ARGB4444);
 			
-			Assets.help1text = g.newPixmap("HelpScreen1text322x110.png", PixmapFormat.ARGB4444);
-			Assets.help2text = g.newPixmap("HelpScreen2text322x110.png", PixmapFormat.ARGB4444);
-			Assets.help3text = g.newPixmap("HelpScreen3text_293x116.png", PixmapFormat.ARGB4444);
-			Assets.help5text = g.newPixmap("HelpScreen4text227x76.png", PixmapFormat.ARGB4444);
-			Assets.help4text = g.newPixmap("HelpScreen5Text_320x107.png", PixmapFormat.ARGB4444);
+			Assets.help1text = g.newPixmap("HelpScreen1text_300x110.png", PixmapFormat.ARGB4444);
+			Assets.help2text = g.newPixmap("HelpScreen2text_300x110.png", PixmapFormat.ARGB4444);
+			Assets.help3text = g.newPixmap("HelpScreen3text_300x110.png", PixmapFormat.ARGB4444);
+			Assets.help4text = g.newPixmap("HelpScreen4text_300x110.png", PixmapFormat.ARGB4444);
+			Assets.help5text = g.newPixmap("HelpScreen5text_300x110.png", PixmapFormat.ARGB4444);
+			
 			Assets.gestureLeftTouch = g.newPixmap("Gesture_LeftHand80x94.png", PixmapFormat.ARGB4444);
 			Assets.gestureRightTouch = g.newPixmap("Gesture_RightHand80x94.png", PixmapFormat.ARGB4444);
 			
@@ -232,6 +235,7 @@ public class LoadingScreen extends Screen {
 		
 		Assets.bgMusic = game.getAudio().newMusic("whistle1song.ogg");
 		Assets.bgMusic2 = game.getAudio().newMusic("whistle2song.ogg");
+		Assets.bgMusic3 = game.getAudio().newMusic("whistle3song.ogg");
 		
 		//setup scaling factor for images to fit the world grid
 		float tempScale = g.getDeviceX()/10;

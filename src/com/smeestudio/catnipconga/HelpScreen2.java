@@ -110,7 +110,6 @@ public class HelpScreen2 extends Screen {
 		
 		g.drawPixmap(Assets.background, 0, 0);
 		
-		g.drawPixmap(Assets.help2text, ((g.getWidth()/2)-(Assets.help2text.getWidth()/2)), (g.getHeight()/7));
 
 		//draw cat stuff here
 		//draw cat by determining type
@@ -191,6 +190,8 @@ public class HelpScreen2 extends Screen {
 		g.drawPixmap(currentCatPixmap, xcat, ycat);			
 		
 		g.drawPixmap(Assets.buttonRight, g.getWidth()-Assets.buttonRight.getWidth()-10, 10);
+
+		g.drawPixmap(Assets.help2text, ((g.getWidth()/2)-(Assets.help2text.getWidth()/2)), (g.getHeight()/14));
 		
 	}
 

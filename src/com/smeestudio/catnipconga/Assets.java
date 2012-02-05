@@ -100,4 +100,5 @@ public class Assets {
 	
 	public static Music bgMusic;
 	public static Music bgMusic2;
+	public static Music bgMusic3;
 }

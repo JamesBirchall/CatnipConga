@@ -20,6 +20,9 @@ public class CatnipCongaGame extends AndroidGame{
 				if(Assets.bgMusic2.isPlaying()){
 					Assets.bgMusic2.dispose();	
 				}
+				if(Assets.bgMusic3.isPlaying()){
+					Assets.bgMusic3.dispose();	
+				}
 			}
 	}
 

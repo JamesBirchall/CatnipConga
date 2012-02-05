@@ -133,6 +133,28 @@ public class GameScreen extends Screen {
         	started = true;
         }
 		
+		//Start new music if cat in crazy mode
+		if(world.catCrazed && Assets.bgMusic2.isPlaying()){
+			
+			//Setting up new music to play
+			Log.d("Stopping standard music", "Starting special!");
+			//Stop music and set looping faster track
+			Assets.bgMusic2.stop();
+			Assets.bgMusic3.play();
+			//Assets.bgMusic3.setLooping(true);
+			Assets.bgMusic3.restart();
+		}
+
+		if(!world.catCrazed && Assets.bgMusic3.isPlaying()){
+			Log.d("Stopping special music", "Starting standard!");
+			
+			//Stop music and set looping faster track
+			Assets.bgMusic3.stop();
+			Assets.bgMusic2.play();
+			//Assets.bgMusic2.setLooping(true);
+			Assets.bgMusic2.restart();
+		}
+		
 		Graphics g = game.getGraphics();
 		
 		//Get cat current direction
@@ -243,9 +265,9 @@ public class GameScreen extends Screen {
 			
 			
 			if(Settings.soundEnabled){
-				Assets.bgMusic2.play();
-				Assets.bgMusic2.setLooping(true);
-				Assets.bgMusic2.restart();
+					Assets.bgMusic2.play();
+					Assets.bgMusic2.setLooping(true);
+					Assets.bgMusic2.restart();			
 			}
 			
 			
@@ -740,7 +762,13 @@ public class GameScreen extends Screen {
 		if(world.gameOver){
 			Settings.addScore(world.score);
 			Settings.save(game.getFileIO());
-			Assets.bgMusic2.stop();
+			if(Assets.bgMusic2.isPlaying()){
+				Assets.bgMusic2.stop();	
+			}
+			if(Assets.bgMusic3.isPlaying()){
+				Assets.bgMusic3.stop();	
+			}
+
 		}
 	}
 	
