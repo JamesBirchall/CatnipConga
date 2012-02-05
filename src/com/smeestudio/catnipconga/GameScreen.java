@@ -2,8 +2,6 @@ package com.smeestudio.catnipconga;
 
 import java.util.List;
 
-import android.util.Log;
-
 import com.smeestudio.framework.Game;
 import com.smeestudio.framework.Graphics;
 import com.smeestudio.framework.Input.TouchEvent;
@@ -137,7 +135,6 @@ public class GameScreen extends Screen {
 		if(world.catCrazed && Assets.bgMusic2.isPlaying()){
 			
 			//Setting up new music to play
-			Log.d("Stopping standard music", "Starting special!");
 			//Stop music and set looping faster track
 			Assets.bgMusic2.stop();
 			Assets.bgMusic3.play();
@@ -145,9 +142,7 @@ public class GameScreen extends Screen {
 			Assets.bgMusic3.restart();
 		}
 
-		if(!world.catCrazed && Assets.bgMusic3.isPlaying()){
-			Log.d("Stopping special music", "Starting standard!");
-			
+		if(!world.catCrazed && Assets.bgMusic3.isPlaying()){			
 			//Stop music and set looping faster track
 			Assets.bgMusic3.stop();
 			Assets.bgMusic2.play();
@@ -304,7 +299,6 @@ public class GameScreen extends Screen {
 		g.drawPixmap(Assets.score, 5, g.getHeight()-(Assets.score.getHeight()+10));
 		//draw Texts for score - need to size depending on size of number map!
 		drawText(g, score, Assets.score.getWidth()+5, g.getHeight()-Assets.numberMap.getHeight());
-		logFrame();
 	}
 
 	private void drawText(Graphics g, String line, int x, int y) {
@@ -771,15 +765,6 @@ public class GameScreen extends Screen {
 
 		}
 	}
-	
-	public void logFrame() {
-        frames++;
-        if(System.nanoTime() - startTime >= 1000000000) {
-            Log.d("FPSCounter ", "fps: " + frames);
-            frames = 0;
-            startTime = System.nanoTime();
-        }
-    }
 	
 	@Override
 	public void resume() {

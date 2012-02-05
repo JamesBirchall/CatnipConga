@@ -38,17 +38,29 @@ public class HelpScreen extends Screen {
 				//Process touch Events/key events
 				int len = touchEvents.size();
 				
+				Graphics g = game.getGraphics();
+				
 				//for now any touch event go back to main menu screen
 				for(int i = 0; i < len; i++){
 					TouchEvent event = touchEvents.get(i);
 					if(event.type == TouchEvent.TOUCH_UP){
-						game.setScreen(new HelpScreen2(game));
-						if(Settings.soundEnabled)
-							Assets.purr.play(1);
-							return;	
+						if(inBounds(event, g.getWidth()-Assets.buttonRight.getWidth()-10, 10, Assets.buttonRight.getWidth(), Assets.buttonRight.getHeight())){
+							game.setScreen(new HelpScreen2(game));
+							if(Settings.soundEnabled)
+								Assets.purr.play(1);
+								return;			
+						}
 					}
 
 				}
+	}
+
+	//method for checking whether object with starting x, y and width/height has been touched!
+	private boolean inBounds(TouchEvent event, int x, int y, int width, int height) {
+		if(event.x > x && event.x < x + width - 1 && event.y > y && event.y < y + height - 1)
+			return true;
+		else
+			return false;
 	}
 
 	@Override
