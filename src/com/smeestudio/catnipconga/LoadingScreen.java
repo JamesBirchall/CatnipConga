@@ -113,11 +113,7 @@ public class LoadingScreen extends Screen {
 			Assets.help2text = g.newPixmap("HelpScreen2text_400x147.png", PixmapFormat.ARGB4444);
 			Assets.help3text = g.newPixmap("HelpScreen3text_400x147.png", PixmapFormat.ARGB4444);
 			Assets.help4text = g.newPixmap("HelpScreen4text_400x147.png", PixmapFormat.ARGB4444);
-			Assets.help5text = g.newPixmap("HelpScreen5text_400x147.png", PixmapFormat.ARGB4444);
-			
-			Assets.gestureLeftTouch = g.newPixmap("Gesture_LeftHand160x188.png", PixmapFormat.ARGB4444);
-			Assets.gestureRightTouch = g.newPixmap("Gesture_RightHand160x188.png", PixmapFormat.ARGB4444);
-			
+			Assets.help5text = g.newPixmap("HelpScreen5text_400x147.png", PixmapFormat.ARGB4444);			
 			
 			Assets.creditsScreen = g.newPixmap("CreditsScreen800x480.png", PixmapFormat.ARGB4444);
 			
@@ -217,9 +213,6 @@ public class LoadingScreen extends Screen {
 			Assets.help4text = g.newPixmap("HelpScreen4text_300x110.png", PixmapFormat.ARGB4444);
 			Assets.help5text = g.newPixmap("HelpScreen5text_300x110.png", PixmapFormat.ARGB4444);
 			
-			Assets.gestureLeftTouch = g.newPixmap("Gesture_LeftHand80x94.png", PixmapFormat.ARGB4444);
-			Assets.gestureRightTouch = g.newPixmap("Gesture_RightHand80x94.png", PixmapFormat.ARGB4444);
-			
 			Assets.creditsScreen = g.newPixmap("CreditsScreen480x320.png", PixmapFormat.ARGB4444);
 
 			Assets.buttonDown = g.newPixmap("ButtonDown50x50.png",	PixmapFormat.ARGB4444);
@@ -228,7 +221,6 @@ public class LoadingScreen extends Screen {
 			Assets.buttonRight = g.newPixmap("ButtonRight50x50.png",	PixmapFormat.ARGB4444);
 		}
 		
-		Assets.click = game.getAudio().newSound("Click.ogg");
 		Assets.purr = game.getAudio().newSound("CatPurring.ogg");
 		Assets.screech = game.getAudio().newSound("CatScreech.ogg");
 		Assets.meow = game.getAudio().newSound("CatMeow.ogg");

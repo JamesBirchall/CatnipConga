@@ -21,8 +21,7 @@ public class Assets {
 	public static Pixmap help4text;
 	public static Pixmap help5text;
 	public static Pixmap controlCopy;
-	public static Pixmap gestureLeftTouch;
-	public static Pixmap gestureRightTouch;
+	
 	public static Pixmap creditsScreen;
 	
 	public static Pixmap numberMap;
@@ -93,7 +92,6 @@ public class Assets {
 	public static Pixmap buttonUp;
 	
 	
-	public static Sound click;
 	public static Sound purr;
 	public static Sound screech;
 	public static Sound meow;
